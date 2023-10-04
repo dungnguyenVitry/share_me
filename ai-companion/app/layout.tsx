@@ -20,7 +20,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <ThemeProvider attribute='class' defaultTheme='system' enableSystem >{children}
+          <ThemeProvider attribute='class' defaultTheme='darkTheme' enableSystem >{children}
           </ThemeProvider></body>
       </html>
 
