@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ImageUpload } from "@/components/image-upload";
-// import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectValue, SelectTrigger } from "@/components/ui/select";
 
@@ -63,7 +63,7 @@ export const CompanionForm = ({
   categories,
   initialData
 }: CompanionFormProps) => {
-//   const { toast } = useToast();
+  const { toast } = useToast();
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -88,19 +88,19 @@ export const CompanionForm = ({
         await axios.post("/api/companion", values);
       }
 
-    //   toast({
-    //     description: "Success.",
-    //     duration: 3000,
-    //   });
+      toast({
+        description: "Success.",
+        duration: 3000,
+      });
 
       router.refresh();
       router.push("/");
     } catch (error) {
-    //   toast({
-    //     variant: "destructive",
-    //     description: "Something went wrong.",
-    //     duration: 3000,
-    //   });
+      toast({
+        variant: "destructive",
+        description: "Something went wrong.",
+        duration: 3000,
+      });
     }
   };
 
